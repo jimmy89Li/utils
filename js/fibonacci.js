@@ -12,7 +12,6 @@
  *   The Fibonacci number at the given position.
  */
 const fibRecursive = (num) => {
-  if (num < 1) return 0;
   if (num <= 1) return num;
 
   return fibRecursive(num - 1) + fibRecursive(num - 2);
@@ -28,7 +27,6 @@ const fibRecursive = (num) => {
  *   The Fibonacci number at the given position.
  */
 const fibIterative = (num) => {
-  if (num < 1) return 0;
   if (num <= 1) return num;
 
   let a = 0;
@@ -60,8 +58,7 @@ const fibIterative = (num) => {
 const fibMemoized = (num, memo = {}) => {
   if (memo[num]) return memo[num];
 
-  if (num < 1) return 0;
-  if (num === 1) return 1;
+  if (num <= 1) return num;
 
   return (memo[num] = fibMemoized(num - 1, memo) + fibMemoized(num - 2, memo));
 };
