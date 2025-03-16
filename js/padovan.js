@@ -1,5 +1,11 @@
 /**
  * Padovan Sequence implementation.
+ *
+ * The Padovan Sequence is defined as:
+ * P(0) = 1
+ * P(1) = 1
+ * P(2) = 1
+ * P(n) = P(n - 2) + P(n - 3)
  */
 
 /**
