@@ -19,6 +19,31 @@ const fibRecursive = (num) => {
 };
 
 /**
+ * Returns the Fibonacci number at the given position, using iteration.
+ *
+ * @param {number} num
+ *   The position of the Fibonacci number to return.
+ *
+ * @returns {number}
+ *   The Fibonacci number at the given position.
+ */
+const fibIterative = (num) => {
+  if (num < 1) return 0;
+  if (num <= 1) return num;
+
+  let a = 0;
+  let b = 1;
+
+  for (let i = 2; i <= num; i++) {
+    const temp = a + b;
+    a = b;
+    b = temp;
+  }
+
+  return b;
+};
+
+/**
  * Returns the Fibonacci number at the given position, using memoization.
  *
  * @param {number} num
