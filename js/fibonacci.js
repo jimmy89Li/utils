@@ -1,5 +1,25 @@
 /**
- * Returns the Fibonacci number at the given position.
+ * Fibonacci sequence implementations.
+ */
+
+/**
+ * Returns the Fibonacci number at the given position, using recursion.
+ *
+ * @param {number} num
+ *   The position of the Fibonacci number to return.
+ *
+ * @returns {number}
+ *   The Fibonacci number at the given position.
+ */
+const fibRecursive = (num) => {
+  if (num < 1) return 0;
+  if (num <= 1) return num;
+
+  return fibRecursive(num - 1) + fibRecursive(num - 2);
+};
+
+/**
+ * Returns the Fibonacci number at the given position, using memoization.
  *
  * @param {number} num
  *   The position of the Fibonacci number to return.
@@ -12,16 +32,11 @@
  * @example
  * fib(10); // 55
  */
-const fib = (num, memo = {}) => {
+const fibMemoized = (num, memo = {}) => {
   if (memo[num]) return memo[num];
 
   if (num < 1) return 0;
   if (num === 1) return 1;
 
-  return (memo[num] = fib(num - 1, memo) + fib(num - 2, memo));
+  return (memo[num] = fibMemoized(num - 1, memo) + fibMemoized(num - 2, memo));
 };
-
-console.log(fib(5)); // 5
-console.log(fib(10)); // 55
-console.log(fib(15)); // 610
-console.log(fib(20)); // 6765
