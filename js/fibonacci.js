@@ -1,5 +1,13 @@
 /**
  * Fibonacci sequence implementations.
+ *
+ * The Fibonacci sequence is a series of numbers in which each number is
+ * the sum of the two preceding ones, usually starting with 0 and 1.
+ *
+ * The Fibonacci sequence is defined as:
+ * F(0) = 0
+ * F(1) = 1
+ * F(n) = F(n - 1) + F(n - 2)
  */
 
 /**
