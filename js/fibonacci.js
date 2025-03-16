@@ -65,3 +65,18 @@ const fibMemoized = (num, memo = {}) => {
 
   return (memo[num] = fibMemoized(num - 1, memo) + fibMemoized(num - 2, memo));
 };
+
+// Aproximately 93ms to run.
+console.time('fibRecursive');
+console.log(fibRecursive(35));
+console.timeEnd('fibRecursive');
+
+// Aproximately 0.15ms to run.
+console.time('fibIterative');
+console.log(fibIterative(35));
+console.timeEnd('fibIterative');
+
+// Aproximately 0.15ms to run.
+console.time('fibMemoized');
+console.log(fibMemoized(35));
+console.timeEnd('fibMemoized');
