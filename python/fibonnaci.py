@@ -8,7 +8,8 @@
 # F(1) = 1
 # F(n) = F(n - 1) + F(n - 2)
 
-import time
+from timeit import default_timer as timer
+
 
 # Returns the Fibonacci number at the given position, using recursion.
 def fibonacciRecursive(n):
@@ -44,16 +45,16 @@ def fibonacciMemoization(n, memo):
   return memo[n]
 
 # Aproximately 1494ms to run
-fibonacci_recursive_time = time.time()
+fibonacci_recursive_time = timer()
 print(fibonacciRecursive(35))
-print("fibonacciRecursive: %s ms" % ((time.time() - fibonacci_recursive_time) * 1000))
+print("fibonacciRecursive: %s ms" % ((timer() - fibonacci_recursive_time) * 1000))
 
 # Aproximately 0.23ms to run
-fibonacci_iterative_time = time.time()
+fibonacci_iterative_time = timer()
 print(fibonacciIterative(35))
-print("fibonacciIterative %s ms" % ((time.time() - fibonacci_iterative_time) * 1000))
+print("fibonacciIterative %s ms" % ((timer() - fibonacci_iterative_time) * 1000))
 
 # Aproximately 0.24ms to run
-fibonacci_memoization_time = time.time()
+fibonacci_memoization_time = timer()
 print(fibonacciMemoization(35, [None] * 36))
-print("fibonacciMemoization %s ms" % ((time.time() - fibonacci_memoization_time) * 1000))
+print("fibonacciMemoization %s ms" % ((timer() - fibonacci_memoization_time) * 1000))
